@@ -21,7 +21,7 @@ public class Main {
     }
 
     public static int[] generateAi() {
-        int array[] = new int[generateN()];
+        int[] array = new int[generateN()];
         Random random = new Random();
 
         for (int i = 0; i < array.length; i++) {
@@ -30,19 +30,18 @@ public class Main {
         return array;
     }
 
-    public static List<Integer> searchDivider() {   //O(N^2)
-        List<Integer> div = new ArrayList<>();
-        int array[] = generateAi();
-
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 1; j <= array[i]; j++) {
-                if (array[i] % j == 0) {
-                    div.add(j);
-                }
+    public static void searchDivider() {   //O(N^2)
+        List<Integer> dividers = new ArrayList<>();
+        int[] array = generateAi();
+        int count = 0;
+        for (int j : array) {
+            count++;
+            for (int k = 1; k <= j; k++) {
+                if (j % k == 0)
+                    dividers.add(k);
             }
-            System.out.println("N: " + array[i] + " Ai: " + div);
-            div.clear();
+            System.out.println(count + "N: " + j + " Ai: " + dividers);
+            dividers.clear();
         }
-        return div;
     }
 }
