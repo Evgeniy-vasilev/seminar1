@@ -35,13 +35,13 @@ public class Main {
         int[] array = generateAi();
         int count = 0;
         for (int j : array) {
-            count++;
             for (int k = 1; k <= j; k++) {
                 if (j % k == 0)
                     dividers.add(k);
             }
             System.out.println(count + "N: " + j + " Ai: " + dividers);
             dividers.clear();
+            count++;
         }
     }
 }
