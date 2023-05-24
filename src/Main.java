@@ -33,7 +33,7 @@ public class Main {
     public static void searchDivider() {   //O(N^2)
         List<Integer> dividers = new ArrayList<>();
         int[] array = generateAi();
-        int count = 0;
+        int count = 1;
         for (int j : array) {
             for (int k = 1; k <= j; k++) {
                 if (j % k == 0)
